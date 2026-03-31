@@ -578,9 +578,9 @@ function goPaywall() {
 }
 
 function goPay() {
-  const s = encodeURIComponent(sel.skills.join(','));
-  const v = encodeURIComponent(sel.values.join(','));
-  const en = encodeURIComponent(sel.energy.join(','));
+  const s = encodeURIComponent((sel && sel.skills ? sel.skills : []).join(','));
+  const v = encodeURIComponent((sel && sel.values ? sel.values : []).join(','));
+  const en = encodeURIComponent((sel && sel.energy ? sel.energy : []).join(','));
   window.location.href = `typecast-checkout.html?type=${encodeURIComponent(bestType)}&skills=${s}&values=${v}&energy=${en}`;
 }
 </script>
