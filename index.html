@@ -175,6 +175,14 @@
     .wrap { padding: 48px 20px 72px; }
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40BBH7RV3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-40BBH7RV3Y');
+</script>
 </head>
 <body>
 
@@ -578,16 +586,10 @@ function goPaywall() {
 }
 
 function goPay() {
-  try {
-    const s = encodeURIComponent(selections.skills.join(','));
-    const v = encodeURIComponent(selections.values.join(','));
-    const en = encodeURIComponent(selections.energy.join(','));
-    const url = `typecast-checkout.html?type=${encodeURIComponent(bestType)}&skills=${s}&values=${v}&energy=${en}`;
-    window.location.href = url;
-  } catch(err) {
-    alert('เกิดข้อผิดพลาด: ' + err.message);
-    console.error(err);
-  }
+  const s = encodeURIComponent((selections && selections.skills ? selections.skills : []).join(','));
+  const v = encodeURIComponent((selections && selections.values ? selections.values : []).join(','));
+  const en = encodeURIComponent((selections && selections.energy ? selections.energy : []).join(','));
+  window.location.href = `typecast-checkout.html?type=${encodeURIComponent(bestType)}&skills=${s}&values=${v}&energy=${en}`;
 }
 </script>
 </body>

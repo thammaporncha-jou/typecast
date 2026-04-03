@@ -68,6 +68,14 @@
   .btn-confirm:disabled{opacity:0.5;cursor:not-allowed;}
   .security-note{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:12px;color:var(--ink3);}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40BBH7RV3Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-40BBH7RV3Y');
+</script>
 </head>
 <body>
 <nav>
@@ -126,7 +134,7 @@
 </div>
 
 <script>
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzAxJD4Pj2ssL_OLm4P-agg1U5DpPb2idkDVJPzqcQABfrcuCMcPWlZ8n0nPXOUkqjvIQ/exec';
+const APPS_SCRIPT_URL = 'วาง-WEB-APP-URL-จาก-APPS-SCRIPT-ตรงนี้';
 
 const params = new URLSearchParams(window.location.search);
 const mbtiType = params.get('type') || 'ENTJ';
